@@ -6,27 +6,37 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.a71cities.currencyconverter.extras.BaseFragment
 import com.a71cities.trfc.R
+import com.a71cities.trfc.databinding.FragmentSignUpBinding
 
-class SignUpFragment : Fragment() {
+class SignUpFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = SignUpFragment()
     }
 
-    private lateinit var viewModel: SignUpViewModel
+    override lateinit var viewModel: SignUpViewModel
+    lateinit var binding: FragmentSignUpBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+        binding = FragmentSignUpBinding.inflate(layoutInflater,container,false)
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[SignUpViewModel::class.java]
-        // TODO: Use the ViewModel
+        binding.model = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+
+        viewModel.registerData.observe(viewLifecycleOwner) {
+
+        }
     }
 
 }

@@ -4,6 +4,8 @@ import com.a71cities.trfc.BuildConfig
 import com.a71cities.trfc.views.devisions.model.DevisionReponse
 import com.a71cities.trfc.views.gallery.model.GalleryResponse
 import com.a71cities.trfc.views.news.model.NewsReponse
+import com.a71cities.trfc.views.signIn.model.SignInResponse
+import com.a71cities.trfc.views.signUp.model.SignUpResponse
 import com.google.gson.GsonBuilder
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
@@ -57,6 +59,16 @@ interface RetrofitClient {
         val apiService: RetrofitClient by lazy { createRetrofitClient() }
     }
 
+
+    @POST("register")
+    suspend fun signUp(
+        @Body body: HashMap<String,String>
+    ): SignUpResponse
+
+   @POST("login")
+    suspend fun signIn(
+        @Body body: HashMap<String,String>
+    ): SignInResponse
 
     @GET("teams")
     suspend fun getDivisions(): DevisionReponse

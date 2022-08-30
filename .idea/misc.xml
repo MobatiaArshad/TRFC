@@ -5,11 +5,13 @@
       <map>
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.332" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/app_icon_foreground.xml" value="0.29" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/button_bg_yellow.xml" value="0.2805" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/calender_selected_bg.xml" value="0.3165" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/calender_selecter_bg.xml" value="0.29" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/calender_unselected_bg.xml" value="0.29" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/custom_calendar_bg_selector.xml" value="0.29" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/custom_calendar_text_selector.xml" value="0.29" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/edt_bg.xml" value="0.2805" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/half_transparent.xml" value="0.332" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/half_transparent_white.xml" value="0.2545" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/ic_home_bg.xml" value="0.171" />
@@ -27,6 +29,8 @@
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_news.xml" value="0.22327558025498528" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_sign_up.xml" value="0.22" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/gallery_rec_lyt.xml" value="0.2911500641299701" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/monthHeader.xml" value="0.29200513039760584" />
         <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/month_header.xml" value="0.2911500641299701" />
@@ -44,5 +48,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

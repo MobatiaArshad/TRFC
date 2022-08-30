@@ -5,4 +5,9 @@
     <string name="teams">Teams</string>
     <string name="gallery">Gallery</string>
     <string name="ownership">Ownership</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_email">Your Email</string>
+    <string name="your_password">Your password</string>
+    <string name="signup">SignUp</string>
+    <string name="signin">SignIn</string>
 </resources>

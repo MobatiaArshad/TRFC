@@ -3,6 +3,7 @@ package com.a71cities.trfc
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.HapticFeedbackConstants
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -61,6 +62,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         navControl = findNavController(binding.fragmentContainer.id)
+
+        binding.bottomBarInc.root.isVisible = !arrayOf(R.id.signInFragment,R.id.signUpFragment).contains(navControl?.currentDestination!!.id)
+
     }
 
     override fun onBackPressed() {

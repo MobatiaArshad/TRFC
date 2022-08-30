@@ -75,6 +75,7 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import com.a71cities.trfc.R
+import com.a71cities.trfc.utils.commonModel.CommonResponse
 import com.google.gson.Gson
 import java.io.IOException
 import java.time.LocalTime
@@ -253,6 +254,14 @@ val TextView?.isValidEmail: Boolean
     get() {
         return Patterns.EMAIL_ADDRESS.matcher(this?.text?.toString()).matches()
     }
+//
+//val CharSequence?.isValidEmail: Boolean
+//    get() {
+//        return Patterns.EMAIL_ADDRESS.matcher(this!!).matches()
+//    }
+
+fun isValidEmail(input: String): Boolean = Patterns.EMAIL_ADDRESS.matcher(input).matches()
+
 
 
 val TextView?.isValidPhone: Boolean
@@ -1642,6 +1651,10 @@ fun ImageView.isCommented(isCommented: Int) {
     } else {
         this.setImageDrawable(ContextCompat.getDrawable(this.context,R.drawable.uncomment_ico))
     }
+}
+
+fun getErrorResponse(errorString: String): CommonResponse {
+    return Gson().fromJson(errorString,CommonResponse::class.java)
 }
 
 
