@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TRFC</string>
+    <string name="invalid_date">Invalid Date</string>
+    <string name="academy">Academy</string>
+    <string name="teams">Teams</string>
+    <string name="gallery">Gallery</string>
+    <string name="ownership">Ownership</string>
+</resources>

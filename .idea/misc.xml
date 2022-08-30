@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.332" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/app_icon_foreground.xml" value="0.29" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/calender_selected_bg.xml" value="0.3165" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/calender_selecter_bg.xml" value="0.29" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/calender_unselected_bg.xml" value="0.29" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/custom_calendar_bg_selector.xml" value="0.29" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/custom_calendar_text_selector.xml" value="0.29" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/half_transparent.xml" value="0.332" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/half_transparent_white.xml" value="0.2545" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/ic_home_bg.xml" value="0.171" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/round_shimmer_outline.xml" value="0.2545" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/drawable/roundsquare.xml" value="0.29" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/bottom_bar_lyt.xml" value="0.25" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/calendar_day_layout.xml" value="0.9" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/common_tiles_rec_lyt.xml" value="0.25" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/devision_rec_lyt.xml" value="0.2911500641299701" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/devision_rec_shimmer.xml" value="0.2911500641299701" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_devisions.xml" value="0.28088926891834115" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_event.xml" value="0.16" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_gallery.xml" value="0.29200513039760584" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_news.xml" value="0.22327558025498528" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/gallery_rec_lyt.xml" value="0.2911500641299701" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/monthHeader.xml" value="0.29200513039760584" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/month_header.xml" value="0.2911500641299701" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/news_rec_lyt.xml" value="0.25" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/profile_sub_data.xml" value="0.33" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/reaction_lyt.xml" value="0.67" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/slider_img_rec_lyt.xml" value="0.2" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/layout/team_vs_team_rec_lyt.xml" value="0.33" />
+        <entry key="..\:/Arshad/Personal/Rijo/TRFC/TRFC/app/src/main/res/mipmap-anydpi-v26/app_icon.xml" value="0.332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
