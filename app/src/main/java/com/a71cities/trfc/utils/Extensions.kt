@@ -77,6 +77,7 @@ import androidx.databinding.DataBindingUtil
 import com.a71cities.trfc.R
 import com.a71cities.trfc.utils.commonModel.CommonResponse
 import com.google.gson.Gson
+import org.json.JSONObject
 import java.io.IOException
 import java.time.LocalTime
 
@@ -1653,8 +1654,8 @@ fun ImageView.isCommented(isCommented: Int) {
     }
 }
 
-fun getErrorResponse(errorString: String): CommonResponse {
-    return Gson().fromJson(errorString,CommonResponse::class.java)
+fun getErrorResponse(errorString: JSONObject): String {
+    return errorString.optString("data")
 }
 
 

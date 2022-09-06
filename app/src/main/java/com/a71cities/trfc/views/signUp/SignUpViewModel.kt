@@ -11,6 +11,8 @@ import com.a71cities.trfc.utils.isValidEmail
 import com.a71cities.trfc.views.signUp.model.SignUpResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
+import org.json.JSONObject
+import retrofit2.HttpException
 import java.util.regex.Pattern
 
 class SignUpViewModel : BaseViewModel() {
@@ -40,15 +42,13 @@ class SignUpViewModel : BaseViewModel() {
 
                         loader.value = false
                     } else {
-                        val error = getErrorResponse(Gson().toJson(call).toString())
-                        showAlertTxt.value = error.data
-
                         loader.value = false
                     }
 
                 } catch (e: Exception) {
                     e.printStackTrace()
                     loader.value = false
+                    showAlertTxt.value = getErrorResponse(JSONObject((e as? HttpException)?.response()?.errorBody()?.string()))
                 }
 
             }

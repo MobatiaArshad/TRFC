@@ -6,9 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.a71cities.trfc.databinding.NewsRecLytBinding
 import com.a71cities.trfc.utils.isCommented
 import com.a71cities.trfc.utils.isLiked
+import com.a71cities.trfc.views.news.NewsViewModel
 import com.a71cities.trfc.views.news.model.NewsReponse
 
-class NewsAdapter(val array: List<NewsReponse.Data>,val click:(NewsReponse.Data) -> Unit): RecyclerView.Adapter<NewsAdapter.NWSADA>() {
+class NewsAdapter(
+    val array: List<NewsReponse.Data>,
+    val viewModel: NewsViewModel,
+    val click: (NewsReponse.Data) -> Unit
+): RecyclerView.Adapter<NewsAdapter.NWSADA>() {
 
     inner class NWSADA(val binding: NewsRecLytBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -28,14 +33,17 @@ class NewsAdapter(val array: List<NewsReponse.Data>,val click:(NewsReponse.Data)
 
                     include.likeBtn.setOnClickListener { v ->
                         if (it.liked){
-                            it.liked = true
+                            it.liked = false
                             it.likes = it.likes - 1
+
+                            viewModel.likeUnlike("unlike",it.id!!)
 
 
                         } else {
-                            it.liked = false
+                            it.liked = true
                             it.likes = it.likes + 1
 
+                            viewModel.likeUnlike("like",it.id!!)
 
                         }
 

@@ -1,6 +1,7 @@
 package com.a71cities.trfc.application
 
 import android.app.Application
+import com.a71cities.trfc.extras.Pref
 
 class MyApp: Application() {
 
@@ -11,5 +12,6 @@ class MyApp: Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        Pref.init(instance)
     }
 }

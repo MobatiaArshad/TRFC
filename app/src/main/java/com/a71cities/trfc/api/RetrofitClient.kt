@@ -1,9 +1,13 @@
 package com.a71cities.trfc.api
 
 import com.a71cities.trfc.BuildConfig
+import com.a71cities.trfc.extras.Pref
 import com.a71cities.trfc.views.devisions.model.DevisionReponse
+import com.a71cities.trfc.views.events.model.MatchResponse
 import com.a71cities.trfc.views.gallery.model.GalleryResponse
 import com.a71cities.trfc.views.news.model.NewsReponse
+import com.a71cities.trfc.views.news.model.ReactionResponse
+import com.a71cities.trfc.views.players.models.PlayersResponse
 import com.a71cities.trfc.views.signIn.model.SignInResponse
 import com.a71cities.trfc.views.signUp.model.SignUpResponse
 import com.google.gson.GsonBuilder
@@ -24,8 +28,9 @@ interface RetrofitClient {
         private val client = OkHttpClient.Builder()
             .readTimeout(1, TimeUnit.MINUTES)
             .addInterceptor(Interceptor { chain ->
-                val request = chain.request()
+                var request = chain.request()
                 val urlBuilder = request.url.newBuilder()
+                request = request.newBuilder().url(urlBuilder.build()).addHeader("Authorization","Bearer ${Pref.profile?.token}").build()
 
                 try {
                     chain.proceed(request)
@@ -73,10 +78,24 @@ interface RetrofitClient {
     @GET("teams")
     suspend fun getDivisions(): DevisionReponse
 
+    @GET("players/{id}")
+    suspend fun getPLayers(
+        @Path("id") id: String
+    ): PlayersResponse
+
     @GET("gallery")
     suspend fun getGallery(): GalleryResponse
 
     @GET("posts")
     suspend fun getNews(): NewsReponse
+
+    @POST("{reaction}/{id}")
+    suspend fun likeUnlike(
+        @Path("reaction") reaction: String,
+        @Path("id") id: String
+    ): ReactionResponse
+
+    @GET("matches")
+    suspend fun getMatches(): MatchResponse
 
 }

@@ -2,8 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home_nav"
-    app:startDestination="@id/signInFragment">
+    android:id="@+id/home_nav">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -39,10 +38,23 @@
         android:id="@+id/signInFragment"
         android:name="com.a71cities.trfc.views.signIn.SignInFragment"
         android:label="SignInFragment"
-        tools:layout="@layout/fragment_sign_in"/>
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/slide_down" />
+    </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.a71cities.trfc.views.signUp.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up"/>
+    <fragment
+        android:id="@+id/playersFragment"
+        android:name="com.a71cities.trfc.views.players.PlayersFragment"
+        android:label="PlayersFragment"
+        tools:layout="@layout/fragment_players"/>
 </navigation>

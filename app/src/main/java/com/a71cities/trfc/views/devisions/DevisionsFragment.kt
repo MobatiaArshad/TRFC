@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import com.a71cities.currencyconverter.extras.BaseFragment
 import com.a71cities.trfc.R
 import com.a71cities.trfc.databinding.FragmentDevisionsBinding
+import com.a71cities.trfc.extras.Constants.PLAYER_ID
 import com.a71cities.trfc.views.devisions.adapter.DevisionRecAdapter
 
 class DevisionsFragment : BaseFragment() {
@@ -35,7 +38,9 @@ class DevisionsFragment : BaseFragment() {
 
         viewModel.divisionArray.observe(viewLifecycleOwner) {
             binding.recyclerView.adapter = DevisionRecAdapter(it) { div ->
-
+                findNavController().navigate(R.id.playersFragment,
+                    bundleOf(PLAYER_ID to div.id)
+                )
             }
         }
 

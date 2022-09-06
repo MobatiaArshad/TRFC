@@ -5,8 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.a71cities.currencyconverter.extras.BaseFragment
 import com.a71cities.trfc.R
 import com.a71cities.trfc.databinding.CalendarDayLayoutBinding
 import com.a71cities.trfc.databinding.FragmentEventBinding
@@ -24,13 +27,13 @@ import java.time.YearMonth
 import java.time.temporal.WeekFields
 import java.util.*
 
-class EventFragment : Fragment() {
+class EventFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = EventFragment()
     }
 
-    private lateinit var viewModel: EventViewModel
+    override lateinit var viewModel: EventViewModel
     private lateinit var binding: FragmentEventBinding
     private val selectedDates = mutableSetOf<LocalDate>()
     private val today = LocalDate.now()
@@ -45,8 +48,12 @@ class EventFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this)[EventViewModel::class.java]
 
-        binding.recycler.adapter = TeamVsTeamAdapter()
+        viewModel.matchData.observe(viewLifecycleOwner) {
+            binding.recycler.adapter = TeamVsTeamAdapter(it)
+        }
+
         setUpCalendar()
 
 
@@ -74,6 +81,7 @@ class EventFragment : Fragment() {
                             selectedDates.remove(day.date)
                         } else {
                             selectedDates.add(day.date)
+                            Toast.makeText(context, ""+day.date, Toast.LENGTH_SHORT).show()
                         }
                         binding.calendarView.notifyDayChanged(day)
                     }

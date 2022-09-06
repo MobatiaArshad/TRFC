@@ -36,7 +36,7 @@ class NewsFragment : BaseFragment() {
 
 
         viewModel.newsArray.observe(viewLifecycleOwner) {
-            binding.recycler.adapter = NewsAdapter(it) {
+            binding.recycler.adapter = NewsAdapter(it,viewModel) {
 
             }
         }

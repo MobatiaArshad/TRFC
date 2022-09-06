@@ -12,6 +12,8 @@ import com.a71cities.trfc.utils.isValidEmail
 import com.a71cities.trfc.views.signIn.model.LoginData
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
+import org.json.JSONObject
+import retrofit2.HttpException
 
 class SignInViewModel : BaseViewModel() {
 
@@ -35,19 +37,17 @@ class SignInViewModel : BaseViewModel() {
                     if (call.status == 200) {
                         logInData.value = call.data!!
                         Pref.profile = call.data
+                        Pref.isLogged = true
 
                         loader.value = false
                     } else {
-                        println("DATA: "+Gson().toJson(call).toString())
-//                        val error = getErrorResponse(Gson().toJson(call).toString())
-//                        showAlertTxt.value = error.data
-
                         loader.value = false
                     }
 
-                } catch (e: Exception) {
+                } catch (e: HttpException) {
                     e.printStackTrace()
                     loader.value = false
+                    showAlertTxt.value = getErrorResponse(JSONObject((e as? HttpException)?.response()?.errorBody()?.string()))
                 }
             }
         }

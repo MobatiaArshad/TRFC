@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.a71cities.currencyconverter.extras.BaseFragment
 import com.a71cities.trfc.R
 import com.a71cities.trfc.databinding.FragmentSignUpBinding
@@ -35,7 +36,11 @@ class SignUpFragment : BaseFragment() {
 
 
         viewModel.registerData.observe(viewLifecycleOwner) {
+            findNavController().navigateUp()
+        }
 
+        binding.goToSignIn.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
