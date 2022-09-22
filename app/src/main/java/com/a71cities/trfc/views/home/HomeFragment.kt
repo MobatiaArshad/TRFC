@@ -59,10 +59,15 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         binding.goToTeams.setOnClickListener(this)
         binding.goToGallery.setOnClickListener(this)
+        binding.cardView.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v?.id){
+
+            binding.cardView.id -> {
+                findNavController().navigate(R.id.academyFragment)
+            }
 
             binding.goToTeams.id -> {
                 findNavController().navigate(R.id.devisionsFragment)

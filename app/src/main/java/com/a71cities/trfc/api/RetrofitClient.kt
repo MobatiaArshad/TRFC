@@ -2,6 +2,7 @@ package com.a71cities.trfc.api
 
 import com.a71cities.trfc.BuildConfig
 import com.a71cities.trfc.extras.Pref
+import com.a71cities.trfc.views.academy.model.AcademyResponse
 import com.a71cities.trfc.views.devisions.model.DevisionReponse
 import com.a71cities.trfc.views.events.model.MatchResponse
 import com.a71cities.trfc.views.gallery.model.GalleryResponse
@@ -97,5 +98,9 @@ interface RetrofitClient {
 
     @GET("matches")
     suspend fun getMatches(): MatchResponse
+
+
+    @GET("academy")
+    suspend fun getAcademy(): AcademyResponse
 
 }

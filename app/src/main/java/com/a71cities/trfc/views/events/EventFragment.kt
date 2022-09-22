@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.a71cities.currencyconverter.extras.BaseFragment
 import com.a71cities.trfc.R
 import com.a71cities.trfc.databinding.CalendarDayLayoutBinding
 import com.a71cities.trfc.databinding.FragmentEventBinding
 import com.a71cities.trfc.databinding.MonthHeaderBinding
+import com.a71cities.trfc.utils.convertMatchDate
 import com.a71cities.trfc.utils.wordCapitalize
 import com.a71cities.trfc.views.events.adapter.TeamVsTeamAdapter
 import com.kizitonwose.calendarview.model.CalendarDay
@@ -52,15 +52,16 @@ class EventFragment : BaseFragment() {
 
         viewModel.matchData.observe(viewLifecycleOwner) {
             binding.recycler.adapter = TeamVsTeamAdapter(it)
-        }
 
-        setUpCalendar()
+            setUpCalendar(it.map { m -> m.dateAndTime })
+
+        }
 
 
 
     }
 
-    private fun setUpCalendar() {
+    private fun setUpCalendar(gameDates: List<String?>) {
         val currentMonth = YearMonth.now()
         val firstMonth = currentMonth.minusMonths(0)
         val lastMonth = currentMonth.plusMonths(1)
@@ -68,6 +69,7 @@ class EventFragment : BaseFragment() {
         binding.calendarView.setup(firstMonth, lastMonth, firstDayOfWeek)
         binding.calendarView.scrollToMonth(currentMonth)
 
+        println("DATA: ${gameDates.map { it!!.convertMatchDate() }}")
 
         class DayViewContainer(view: View) : ViewContainer(view) {
             // Will be set when this container is bound. See the dayBinder.
@@ -75,6 +77,7 @@ class EventFragment : BaseFragment() {
             val textView = CalendarDayLayoutBinding.bind(view).calendarDayText
 
             init {
+
                 view.setOnClickListener {
                     if (day.owner == DayOwner.THIS_MONTH) {
                         if (selectedDates.contains(day.date)) {

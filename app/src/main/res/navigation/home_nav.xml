@@ -57,4 +57,9 @@
         android:name="com.a71cities.trfc.views.players.PlayersFragment"
         android:label="PlayersFragment"
         tools:layout="@layout/fragment_players"/>
+    <fragment
+        android:id="@+id/academyFragment"
+        android:name="com.a71cities.trfc.views.academy.AcademyFragment"
+        android:label="AcademyFragment"
+        tools:layout="@layout/fragment_academy"/>
 </navigation>

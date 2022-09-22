@@ -1,12 +1,8 @@
 package com.a71cities.trfc.utils
 
 
-import android.Manifest
-import android.R.attr
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.provider.Settings
 import android.text.*
@@ -20,13 +16,10 @@ import android.widget.*
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.widget.NestedScrollView
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -39,34 +32,14 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
-import kotlin.collections.ArrayList
 import kotlin.reflect.KFunction0
-import android.widget.TimePicker
 
-import android.app.TimePickerDialog.OnTimeSetListener
 import android.graphics.*
 import android.graphics.drawable.Drawable
 import android.net.Uri
-import android.os.Environment
-import java.io.FileOutputStream
 import java.io.InputStream
-import java.sql.Time
-import kotlin.concurrent.thread
-import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.target.Target
-import androidx.core.app.ActivityCompat.startActivityForResult
 
-import android.R.attr.path
-import android.annotation.SuppressLint
 import android.app.*
-import android.location.Address
-import android.location.Geocoder
-import android.location.Location
-import android.location.LocationManager
-
-import android.provider.DocumentsContract
-
-import androidx.core.content.ContextCompat.startActivity
 
 import android.os.Build
 import android.os.Handler
@@ -79,7 +52,9 @@ import com.a71cities.trfc.utils.commonModel.CommonResponse
 import com.google.gson.Gson
 import org.json.JSONObject
 import java.io.IOException
+import java.time.LocalDate
 import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 
 const val GALLERY_IMAGE_REQ_CODE = 102
@@ -1658,6 +1633,15 @@ fun getErrorResponse(errorString: JSONObject): String {
     return errorString.optString("data")
 }
 
+fun String.convertMatchDate(): String {
+// yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+// 2022-08-20T10:57
+    val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm", Locale.ENGLISH)
+    val outputFormat = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
+
+    return outputFormat.format(inputFormat.parse(this)!!)
+
+}
 
 
 
